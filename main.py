@@ -1,7 +1,6 @@
 from functions import *
 
-
-print("\033[1;36;40mPista bácsi élete elkezdődik!\n")
+print(f"\033[1;36;40m{nev} bácsi élete elkezdődik!\n")
 
 osszsirasok=pista_siras()
 
