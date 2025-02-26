@@ -1,4 +1,5 @@
 from random import randint
+from time import time
 
 
 nev=(input("Mi legyen főhősünk neve?"))
@@ -28,20 +29,33 @@ def pista_eletereje(osszsirasok):
     
     for nap in range(90,25185):
 
+        evek=nap//365
+        maradeknap=nap%365
+
         if nap>=25100:
-            print(f'\033[1;31;40m{nev} bácsi elhunyt.')
+            print(f"\033[1;31;40m{evek} év, {maradeknap}. nap.")
+            print(f'{nev} bácsi elhunyt.')
             print(f'{osszsirasok} alkalommal sírt összesen.')
             print(f'{osszesenivasnelkul} liter pálinkát készített élete során {nev}.')
             break
 
-        if randint(1,10000)==1:
-            print(f'\033[1;31;40m{nev} bácsi elhunyt alkoholmérgezésben.')
+        if randint(1,20000)==1:
+            print(f"\033[1;31;40m{evek} év, {maradeknap}. nap.")
+            print(f'{nev} bácsi elhunyt alkoholmérgezésben.')
+            print(f'{osszsirasok} alkalommal sírt összesen.')
+            print(f'{osszesenivasnelkul} liter pálinkát készített élete során {nev}.')
             break
-        elif randint(1,20000)==1:
-            print(f'\033[1;31;40m{nev} bácsi elhunyt agyvérzés miatt.')
+        elif randint(1,50000)==1:
+            print(f"\033[1;31;40m{evek} év, {maradeknap}. nap.")
+            print(f'{nev} bácsi elhunyt agyvérzés miatt.')
+            print(f'{osszsirasok} alkalommal sírt összesen.')
+            print(f'{osszesenivasnelkul} liter pálinkát készített élete során {nev}.')
             break
         elif randint(1,1000000)==1:
-            print(f'\033[1;31;40m{nev} bácsi elhunyt, mert a felesége agyonverte az alkoholfüggősége miatt.')
+            print(f"\033[1;31;40m{evek} év, {maradeknap}. nap.")
+            print(f'{nev} bácsi elhunyt, mert a felesége agyonverte az alkoholfüggősége miatt.')
+            print(f'{osszsirasok} alkalommal sírt összesen.')
+            print(f'{osszesenivasnelkul} liter pálinkát készített élete során {nev}.')
             break
 
         if not ivott:
@@ -51,19 +65,19 @@ def pista_eletereje(osszsirasok):
             if randint(1,5)==1:  
                 ivott=True
                 osszesen-=1
-                print(f'\033[1;37;40m{nap}. nap: {maifozet} liter készült')
+                print(f'\033[1;37;40m{evek} év, {maradeknap} nap: {maifozet} liter készült')
                 print('\t\033[1;31;40mBe fog baszni...')
                 napokjozanon=0
             
 
 
             else:
-                print(f"\033[1;37;40m{nap}. nap.")
+                print(f"\033[1;37;40m{evek} év, {maradeknap} nap.")
                 print(f"\t\033[1;32;40m{nev} bácsi leszokóban van az alkoholból!")
                 napokjozanon+=1
                 print(f'\t\033[1;32;40m{napokjozanon} napja leszokóban van {nev} bácsi!')
                 print(f'------> összesen: {osszesen} liter van raktáron!')
         else:
-            print(f"\033[1;37;40m{nap}. nap.")
+            print(f"\033[1;37;40m{evek} év, {maradeknap} nap.")
             print(f"\033[1;37;40mMa nem készült pálinka, mert {nev} bácsi be van baszva mint a ló!")
             ivott=False
